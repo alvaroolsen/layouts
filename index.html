@@ -7,6 +7,8 @@
  	<meta name="viewport" content="initial-scale=1">
  	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
  	<script src="scripts/mechanix.js"></script>
+ 	<script src="scripts/timer.js"></script>
+
  </head>
  <body>
  	<nav>
@@ -19,7 +21,7 @@
 			<li><a href="#sect6">Item Six</a></li>
 		</ul>
  	</nav>
- 	<section class="alt"></section>
+ 	<section class="alt" id="sect1"></section>
  	<section></section>
  	<section class="alt"></section>
  	<section></section>
@@ -34,25 +36,34 @@
  	<section></section>
  	<section class="alt"></section>
  	<section></section>
- 	<section class="alt"></section>
+ 	<section class="alt">
+ 		<a href="#subSect14">1</a> | 2 | 3 | 4 | 5
+ 	</section>
  	<section id="sect6" class="slider">
  		<div class="slides">
- 			<section class="slide">1</section>
- 			<section class="slide">2</section>
- 			<section class="slide">3</section>
- 			<section class="slide">4</section>
- 			<section class="slide">5</section>
- 			<section class="slide">6</section>
- 			<section class="slide">7</section>
- 			<section class="slide">8</section>
- 			<section class="slide">9</section>
- 			<section class="slide">10</section>
- 			<section class="slide">11</section>
- 			<section class="slide">12</section>
- 			<section class="slide">13</section>
- 			<section class="slide">14</section>
+ 			<section class="slide alt" id="subSect1">1</section>
+ 			<section class="slide" id="subSect2">2</section>
+ 			<section class="slide alt" id="subSect3">3</section>
+ 			<section class="slide" id="subSect4">4</section>
+ 			<section class="slide alt" id="subSect5">5</section>
+ 			<section class="slide" id="subSect6">6</section>
+ 			<section class="slide alt" id="subSect7">7</section>
+ 			<section class="slide" id="subSect8">8</section>
+ 			<section class="slide alt" id="subSect9">9</section>
+ 			<section class="slide" id="subSect10">10</section>
+ 			<section class="slide alt" id="subSect11">11</section>
+ 			<section class="slide" id="subSect12">12</section>
+ 			<section class="slide alt" id="subSect13">13</section>
+ 			<section class="slide" id="subSect14">14</section>
  		</div>
 
  	</section>
+
+ 	<script type="text/javascript">
+ 	var myTimer = new Timer("sect1");
+ 		myTimer.setUp();
+ 		myTimer.startTimer();
+ 	</script>
+
  </body>
 </html>

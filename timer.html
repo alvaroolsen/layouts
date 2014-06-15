@@ -1,0 +1,165 @@
+<!doctype html>
+ <html>
+  <head>
+   <title>My Clock</title>
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+   <meta name="viewport" content="initial-scale=1">
+   <link rel="stylesheet" href="reset.css"/>
+   <style type="text/css">
+   	html, body{
+
+   		width:100%;
+   		height:100%;
+   		min-height:100%;
+   		font-size:500%;
+   	}
+   
+   	#clock{
+   		position:absolute;
+   		top:0px;
+   		bottom:0px;
+   		margin-top: auto;
+   		margin-bottom:auto;
+   		border:solid 1px #000;
+   		margin:0 auto;
+   		width:100%;
+   		min-height:100%;
+   		height:100%;
+   		float:left;
+   		display:none;
+   	}
+   
+   	.time{
+   	/*	border:solid 1px #000;*/
+   		font-size:28vw;
+   		color:#000;
+   		background-color:#fafafa;
+   		height:100%;
+   		float:left;
+   		vertical-align: middle;
+   		padding-top:2%;
+   	}
+
+   	#startTimer{
+   		font-size: 40pt;
+   		text-align:center;
+   		border: 2px solid;
+    	border-radius: 25px;
+    	position:absolute;
+    	top:0px;
+    	bottom:0px;
+
+   	}
+
+   </style>
+
+   <script type="text/javascript">
+	
+
+	//Starts with ZERO
+	var ssTick = 0;
+	var mmTick = 0;
+	var hhTick = 0;
+   	
+   	//GET LOCAL TIME AND ASSIGN TO EACH TICK
+
+   	$(document).ready(function(){
+
+   		$("#startTimer").click(function(){
+
+   		$(this).hide();
+   		$("#clock").show(function(){
+
+   			startTimer();
+   		})
+
+
+   		})
+
+   		function startTimer(){
+	   		setInterval(function(){
+
+				var second = $("#ss");
+				var minute = $("#mm");
+				var hour = $("#hh");
+
+				ssTick++; //adds seconds
+
+				if(mmTick == 0){
+					mmTick = "00";
+				}
+
+				
+				if(hhTick == 0){
+					hhTick = "00";
+				}
+
+				if(ssTick == 0){
+					ssTick = "00";
+				}
+
+
+
+				if(ssTick < 10){ //checks if seconds if less than 10 and adds a 0 before it
+
+					if(ssTick == 0){
+						ssTick = "00";
+					}else{
+						ssTick = "0" + ssTick;
+					}
+
+				}else if(ssTick == 60){
+					ssTick = "00";
+
+					mmTick++;
+
+					if(mmTick < 10){
+						mmTick = "0" + mmTick;
+					}else if(mmTick == 0){
+						mmTick = "00";
+						console.log(mmTick)
+					}else if(mmTick == 60){
+						mmTick = "00";
+
+						hhTick++;
+
+						if(hhTick==0){
+							hhTick = "00";
+						}else if(hhTick < 10){
+							hhTick = "0" + hhTick;
+						}else if(hhTick == 24){
+							hhTick = "00";
+						}
+
+						console.log("___________")
+					}
+
+
+				}
+
+				//Display in DIVs
+				second.html(ssTick);
+				minute.html(mmTick);
+				hour.html(hhTick);
+
+			}, 1000);
+		}
+
+   	});
+
+   </script>
+
+  </head>
+  <body>
+
+  	<div id="startTimer">START TIMER</div>
+
+ 	<div id="clock">
+	  	<div id="hh" class="time">00</div>
+	  	<span class="time">:</span>
+	  	<div id="mm" class="time">00</div>
+	  	<span class="time">:</span>
+	  	<div id="ss" class="time">00</div>
+	</div>
+  </body>	
+ </html>
