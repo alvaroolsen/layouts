@@ -1,8 +1,18 @@
+html,body{
+
+  overflow-x:hidden;
+
+}
+
+
 nav{
   height:60px;
   position:fixed;
   right:0px;
-  top:0px;
+  top:10px;
+  background-color:#dddddd;
+  border-radius: 10px;
+  height:35px;
 }
 
 ul{
@@ -21,7 +31,7 @@ li
 a
 {
   display:block;
-  background-color:#dddddd;
+  
   vertical-align: middle;
   padding:10px 40px 10px 40px;
   font-weight:bold;
@@ -31,9 +41,12 @@ a
 }
 
 a:hover{
-  background-color:#f00;
-  color:#fff;
+  border-radius: 10px;
+  background-color:#ccc;
+  color:#333;
 }
+
+/*NAV ENDS*/
 
 section{
 
@@ -46,6 +59,30 @@ section{
 
   background-color: #333;
 }
+
+.slider{
+
+  overflow-x:scroll;
+  overflow-y:hidden;
+  /*overflow:scroll;*/
+}
+
+.slides{
+  min-width:100%;
+
+}
+
+.slide{
+  position:relative;
+  width:700px;
+  min-height:100%;
+  border:solid 1px #000;
+  background-color:#fafafa;
+ /* display:inline-block;*/
+  float:left;
+}
+
+
 
 /*Narrow Browser*/
 @media only screen and (max-width: 480px){
