@@ -49,16 +49,26 @@ a:hover{
 
 /*NAV ENDS*/
 
+#logo{
+  width:291px;
+  height:157px;
+  background-image:url(../images/site_portfolio_logo.png);
+  background-repeat:no-repeat;
+  position:absolute;
+  z-index:100;
+  top:-125px;
+
+}
+
 section{
   width:100%;
-  height:500px;
 }
 
 
 #main{
   width:960px;
   /*height:900px;*/
-  min-height:80%;
+  min-height:1000px;
   height:80%;
   margin:auto;
   top:100px;
@@ -80,10 +90,27 @@ section{
 .info{
   position:absolute;
   z-index:2;
-  width:5%;
+  width:0%;
   height:100%;
   border-radius: 10px;
-  background-color:rgba(100,100,100,0.5);
+  background-color:rgba(0,216,238,0.38);
+}
+
+.bookmark{
+  position:absolute;
+  top:75%;
+  right:-50px;
+  width:50px;
+  height:50px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius:10px;
+  background-color:rgba(0,216,238,0.38);
+}
+
+.bookmark img{
+  margin:2px;
+  margin-top:4px;
+  width:85%;
 }
 
 .visual{
@@ -92,43 +119,47 @@ section{
   width:100%;
   height:100%;
   border-radius: 10px;
-  background-color:rgba(255, 0, 0, 0.2);
+  background-color:rgba(255, 255, 255, 0.2);
+  background-image:url(../images/work/nutriopia/screens_001.jpg);
+  background-size: 100%;
+}
+
+#arrowLeft{
+  width:80px;
+  height:164px;
+  position:absolute;
+  left:0px;
+  top:50%;
+  background-image:url(../images/arrows_l.png);
+}
+
+#arrowRight{
+  width:80px;
+  height:164px;
+  position:absolute;
+  right:0px;
+  top:50%;
+  background-image:url(../images/arrows_r.png);
+}
+
+.clear{
+  clear:both;
+}
+
+footer{
+  padding-top:10px;
+  font-family:"Helvetica";
+  float:right;
+  font-size:12pt;
+  color:#ff7f00;
+  line-height: 16pt;
 
 }
 
-.alt{
-
-  background-color: #333;
+footer span{
+  float:right;
+  font-size:8pt;
 }
-
-.slider{
-
-  overflow-x:scroll;
-  overflow-y:hidden;
-  /*overflow:scroll;*/
-}
-
-.slides{
-  min-width:100%;
-
-}
-
-.slide{
-  position:relative;
-  width:900px;
-  min-height:100%;
-  border:solid 1px #000;
-  background-color:#fafafa;
- /* display:inline-block;*/
-  float:left;
-}
-
-
-
-
-
-
-
 /*Narrow Browser*/
 @media only screen and (max-width: 480px){
   body{background-color:red;}
@@ -153,5 +184,5 @@ section{
 
 /*Media query for full browser width*/
 @media only screen and (min-width: 961px){
-  body{background-color:grey;}
+  body{background-color:#fafafa;}
 }
